@@ -4,7 +4,6 @@ import android.util.Base64;
 
 import androidx.core.util.Pools;
 
-import org.reactnative.camera.CameraViewManager;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
@@ -12,6 +11,8 @@ import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.google.zxing.Result;
 import com.google.zxing.ResultPoint;
+
+import org.reactnative.camera.CameraViewManager;
 
 import java.util.Formatter;
 
@@ -81,7 +82,7 @@ public class BarCodeReadEvent extends Event<BarCodeReadEvent> {
       }
       event.putString("rawData", formatter.toString());
       formatter.close();
-    } 
+    }
 
     event.putString("type", mBarCode.getBarcodeFormat().toString());
     WritableArray resultPoints = Arguments.createArray();

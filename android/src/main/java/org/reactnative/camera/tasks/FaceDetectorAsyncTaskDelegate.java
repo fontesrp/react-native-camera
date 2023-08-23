@@ -1,8 +1,8 @@
 package org.reactnative.camera.tasks;
 
-import org.reactnative.facedetector.RNFaceDetector;
-
 import com.facebook.react.bridge.WritableArray;
+
+import org.reactnative.facedetector.RNFaceDetector;
 
 public interface FaceDetectorAsyncTaskDelegate {
   void onFacesDetected(WritableArray faces);

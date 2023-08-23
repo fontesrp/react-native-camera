@@ -36,30 +36,31 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
 import android.media.Image;
 import android.media.ImageReader;
-import android.media.MediaRecorder;
 import android.media.MediaActionSound;
-import androidx.annotation.NonNull;
+import android.media.MediaRecorder;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.Surface;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Build;
+
+import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.ReadableMap;
+
+import org.reactnative.camera.utils.ObjectUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.SortedSet;
-
-import org.reactnative.camera.utils.ObjectUtils;
 
 
 

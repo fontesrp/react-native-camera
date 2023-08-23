@@ -16,10 +16,10 @@
 
 package com.google.android.cameraview;
 
-import android.media.CamcorderProfile;
-import android.view.View;
 import android.graphics.SurfaceTexture;
+import android.media.CamcorderProfile;
 import android.os.Handler;
+import android.view.View;
 
 import com.facebook.react.bridge.ReadableMap;
 
@@ -62,7 +62,7 @@ abstract class CameraViewImpl {
     abstract boolean isCameraOpened();
 
     abstract void setFacing(int facing);
-  
+
     abstract int getFacing();
 
     abstract void setCameraId(String id);

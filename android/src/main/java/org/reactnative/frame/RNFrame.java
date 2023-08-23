@@ -1,7 +1,8 @@
 package org.reactnative.frame;
 
-import org.reactnative.camera.utils.ImageDimensions;
 import com.google.mlkit.vision.common.InputImage;
+
+import org.reactnative.camera.utils.ImageDimensions;
 
 /**
  * Wrapper around Frame allowing us to track Frame dimensions.

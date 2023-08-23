@@ -5,31 +5,39 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.facebook.react.bridge.*;
-import com.facebook.react.common.build.ReactBuildConfig;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.GuardedAsyncTask;
+import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableArray;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.uimanager.NativeViewHierarchyManager;
 import com.facebook.react.uimanager.UIBlock;
 import com.facebook.react.uimanager.UIManagerModule;
 import com.google.android.cameraview.AspectRatio;
+import com.google.android.cameraview.Size;
 import com.google.zxing.BarcodeFormat;
+
 import org.reactnative.barcodedetector.BarcodeFormatUtils;
 import org.reactnative.camera.utils.ScopedContext;
 import org.reactnative.facedetector.RNFaceDetector;
-import com.google.android.cameraview.Size;
 
-import javax.annotation.Nullable;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Properties;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.Properties;
 import java.util.Set;
 import java.util.SortedSet;
+
+import javax.annotation.Nullable;
 
 
 public class CameraModule extends ReactContextBaseJavaModule {

@@ -1,6 +1,7 @@
 package org.reactnative.camera.tasks;
 
 import com.facebook.react.bridge.WritableArray;
+
 import org.reactnative.barcodedetector.RNBarcodeDetector;
 
 public interface BarcodeDetectorAsyncTaskDelegate {
