@@ -1,18 +1,5 @@
-// Type definitions for react-native-camera 1.0
-// Definitions by: Felipe Constantino <https://github.com/fconstant>
-//                 Trent Jones <https://github.com/FizzBuzz791>
-//                 Brent Kelly <https://github.com/mrbrentkelly>
-// If you modify this file, put your GitHub info here as well (for easy contacting purposes)
-
-/*
- * Author notes:
- * I've tried to find a easy tool to convert from Flow to Typescript definition files (.d.ts).
- * So we woudn't have to do it manually... Sadly, I haven't found it.
- *
- * If you are seeing this from the future, please, send us your cutting-edge technology :) (if it exists)
- */
 import { Component, ReactNode } from 'react';
-import { NativeMethods, ViewProperties, findNodeHandle } from 'react-native';
+import { NativeMethods, ViewProps, findNodeHandle } from 'react-native';
 
 type Orientation = Readonly<{
   auto: any;
@@ -73,8 +60,8 @@ type VideoCodec = Readonly<{
   AppleProRes4444: symbol;
 }>;
 type ImageType = Readonly<{
-  'jpeg': any;
-  'png': any;
+  jpeg: any;
+  png: any;
 }>;
 
 type FaceDetectionClassifications = Readonly<{ all: any; none: any }>;
@@ -107,13 +94,11 @@ type RecordAudioPermissionStatus = Readonly<
     NOT_AUTHORIZED: 'NOT_AUTHORIZED';
   }>
 >;
-type FaCC = (
-  params: {
-    camera: RNCamera;
-    status: keyof CameraStatus;
-    recordAudioPermissionStatus: keyof RecordAudioPermissionStatus;
-  },
-) => JSX.Element;
+type FaCC = (params: {
+  camera: RNCamera;
+  status: keyof CameraStatus;
+  recordAudioPermissionStatus: keyof RecordAudioPermissionStatus;
+}) => JSX.Element;
 
 export interface Constants {
   CameraStatus: CameraStatus;
@@ -293,7 +278,7 @@ interface Size<T = number> {
   height: T;
 }
 
-interface RectOfInterest extends Point,Size{}
+interface RectOfInterest extends Point, Size {}
 
 export interface Barcode {
   bounds: {
@@ -483,7 +468,7 @@ export interface HardwareCamera {
 
 export function hasTorch(): Promise<boolean>;
 
-export class RNCamera extends Component<RNCameraProps & ViewProperties> {
+export class RNCamera extends Component<RNCameraProps & ViewProps> {
   static Constants: Constants;
 
   _cameraRef: null | NativeMethods;
