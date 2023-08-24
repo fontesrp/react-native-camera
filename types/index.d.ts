@@ -168,18 +168,12 @@ export interface RNCameraProps {
   onSubjectAreaChanged?: (event: { nativeEvent: { prevPoint: { x: number; y: number } } }) => void;
   type?: keyof CameraType;
   flashMode?: keyof FlashMode;
-  notAuthorizedView?: JSX.Element;
-  pendingAuthorizationView?: JSX.Element;
   useCamera2Api?: boolean;
   exposure?: number;
   whiteBalance?: keyof WhiteBalance | CustomWhiteBalance;
   captureAudio?: boolean;
 
   onCameraReady?(): void;
-  onStatusChange?(event: {
-    cameraStatus: keyof CameraStatus;
-    recordAudioPermissionStatus: keyof RecordAudioPermissionStatus;
-  }): void;
   onMountError?(error: { message: string }): void;
 
   onPictureTaken?(): void;
@@ -476,7 +470,6 @@ export class RNCamera extends Component<RNCameraProps & ViewProps> {
 
   takePictureAsync(options?: TakePictureOptions): Promise<TakePictureResponse>;
   recordAsync(options?: RecordOptions): Promise<RecordResponse>;
-  refreshAuthorizationStatus(): Promise<void>;
   stopRecording(): void;
   pausePreview(): void;
   resumePreview(): void;

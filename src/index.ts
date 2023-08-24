@@ -1,5 +1,2 @@
-import RNCamera, { type Status as _CameraStatus, hasTorch } from './RNCamera'
-import FaceDetector from './FaceDetector'
-
-export type CameraStatus = _CameraStatus
-export { RNCamera, FaceDetector, hasTorch }
+export { default as RNCamera, hasTorch } from './RNCamera'
+export { default as FaceDetector } from './FaceDetector'
