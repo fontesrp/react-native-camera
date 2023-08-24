@@ -6,16 +6,17 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.AsyncTask;
-import androidx.exifinterface.media.ExifInterface;
 import android.util.Base64;
 
-import org.reactnative.camera.RNCameraViewHelper;
-import org.reactnative.camera.utils.RNFileUtils;
+import androidx.exifinterface.media.ExifInterface;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
+
+import org.reactnative.camera.RNCameraViewHelper;
+import org.reactnative.camera.utils.RNFileUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

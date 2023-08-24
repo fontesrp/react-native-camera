@@ -18,6 +18,7 @@ package com.google.android.cameraview;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 
 /**
@@ -38,7 +39,7 @@ public class Size implements Comparable<Size>, Parcelable {
         mWidth = width;
         mHeight = height;
     }
-    
+
     public static Size parse(String s) {
         int position = s.indexOf('x');
         if (position == -1) {
@@ -91,18 +92,18 @@ public class Size implements Comparable<Size>, Parcelable {
     public int compareTo(@NonNull Size another) {
         return mWidth * mHeight - another.mWidth * another.mHeight;
     }
-    
+
     @Override
     public int describeContents() {
         return 0;
     }
-    
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mWidth);
         dest.writeInt(mHeight);
     }
-    
+
     public static final Parcelable.Creator<Size> CREATOR = new Parcelable.Creator<Size>() {
         @Override
         public Size createFromParcel(Parcel source) {

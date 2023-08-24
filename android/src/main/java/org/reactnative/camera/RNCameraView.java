@@ -10,31 +10,51 @@ import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.media.CamcorderProfile;
+import android.os.AsyncTask;
 import android.os.Build;
-import androidx.core.content.ContextCompat;
-
 import android.util.DisplayMetrics;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.os.AsyncTask;
-import com.facebook.react.bridge.*;
+
+import androidx.core.content.ContextCompat;
+
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.LifecycleEventListener;
+import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableArray;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.google.android.cameraview.CameraView;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;
 import com.google.zxing.Result;
+
 import org.reactnative.barcodedetector.RNBarcodeDetector;
-import org.reactnative.camera.tasks.*;
+import org.reactnative.camera.tasks.BarCodeScannerAsyncTask;
+import org.reactnative.camera.tasks.BarCodeScannerAsyncTaskDelegate;
+import org.reactnative.camera.tasks.BarcodeDetectorAsyncTask;
+import org.reactnative.camera.tasks.BarcodeDetectorAsyncTaskDelegate;
+import org.reactnative.camera.tasks.FaceDetectorAsyncTask;
+import org.reactnative.camera.tasks.FaceDetectorAsyncTaskDelegate;
+import org.reactnative.camera.tasks.PictureSavedDelegate;
+import org.reactnative.camera.tasks.ResolveTakenPictureAsyncTask;
+import org.reactnative.camera.tasks.TextRecognizerAsyncTask;
+import org.reactnative.camera.tasks.TextRecognizerAsyncTaskDelegate;
 import org.reactnative.camera.utils.RNFileUtils;
 import org.reactnative.facedetector.RNFaceDetector;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 

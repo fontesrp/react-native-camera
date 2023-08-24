@@ -21,15 +21,18 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
-import android.media.MediaRecorder;
 import android.media.MediaActionSound;
+import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Handler;
-import androidx.collection.SparseArrayCompat;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
+import androidx.collection.SparseArrayCompat;
+
 import com.facebook.react.bridge.ReadableMap;
+
+import org.reactnative.camera.utils.ObjectUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,8 +43,6 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import org.reactnative.camera.utils.ObjectUtils;
 
 
 @SuppressWarnings("deprecation")

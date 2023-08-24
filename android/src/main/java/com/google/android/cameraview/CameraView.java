@@ -18,25 +18,23 @@ package com.google.android.cameraview;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Rect;
-import android.hardware.Camera;
+import android.graphics.SurfaceTexture;
 import android.media.CamcorderProfile;
 import android.os.Build;
-import android.os.HandlerThread;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.FrameLayout;
+
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.os.ParcelableCompat;
 import androidx.core.os.ParcelableCompatCreatorCallbacks;
 import androidx.core.view.ViewCompat;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.graphics.SurfaceTexture;
 
 import com.facebook.react.bridge.ReadableMap;
 

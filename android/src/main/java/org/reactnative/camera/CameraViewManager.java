@@ -1,6 +1,8 @@
 package org.reactnative.camera;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.MapBuilder;
@@ -37,6 +39,7 @@ public class CameraViewManager extends ViewGroupManager<RNCameraView> {
       mName = name;
     }
 
+    @NonNull
     @Override
     public String toString() {
       return mName;
@@ -46,24 +49,26 @@ public class CameraViewManager extends ViewGroupManager<RNCameraView> {
   private static final String REACT_CLASS = "RNCamera";
 
   @Override
-  public void onDropViewInstance(RNCameraView view) {
+  public void onDropViewInstance(@NonNull RNCameraView view) {
     view.onHostDestroy();
     super.onDropViewInstance(view);
   }
 
 
+  @NonNull
   @Override
   public String getName() {
     return REACT_CLASS;
   }
 
+  @NonNull
   @Override
-  protected RNCameraView createViewInstance(ThemedReactContext themedReactContext) {
+  public RNCameraView createViewInstance(@NonNull ThemedReactContext themedReactContext) {
     return new RNCameraView(themedReactContext);
   }
 
-  @Override
   @Nullable
+  @Override
   public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
     MapBuilder.Builder<String, Object> builder = MapBuilder.builder();
     for (Events event : Events.values()) {
