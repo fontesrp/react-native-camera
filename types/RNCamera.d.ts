@@ -273,7 +273,7 @@ interface CameraManagerInterface extends Constants {
   pausePreview: (cameraHandle?: number | null) => void;
   isRecording: (cameraHandle?: number | null) => void;
   resumePreview: (cameraHandle?: number | null) => void;
-  hasTorch: () => boolean;
+  hasTorch: () => Promise<boolean>;
 }
 
 interface RNCameraNativeProps {
