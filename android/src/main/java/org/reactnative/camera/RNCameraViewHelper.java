@@ -367,7 +367,7 @@ public class RNCameraViewHelper {
   }
 
   private static int getCamcorderProfileQualityFromCameraModuleConstant(int quality) {
-    switch (quality) {
+    /*switch (quality) {
       case CameraModule.VIDEO_2160P:
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
           return CamcorderProfile.QUALITY_2160P;
@@ -381,7 +381,8 @@ public class RNCameraViewHelper {
       case CameraModule.VIDEO_4x3:
         return CamcorderProfile.QUALITY_480P;
     }
-    return CamcorderProfile.QUALITY_HIGH;
+    return CamcorderProfile.QUALITY_HIGH;*/
+    return CamcorderProfile.QUALITY_CIF;
   }
 
   public static CamcorderProfile getCamcorderProfile(int quality) {
